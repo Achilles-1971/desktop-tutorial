@@ -16,7 +16,10 @@ Including another URLconf
 from WEB1 import views
 from django.contrib import admin
 from django.urls import path
+from django.urls import path
+from WEB1 import views
 urlpatterns = [
-path ('', views.index, name = 'home'),
-path ('admin/', admin. site. urls),
+path ( '' , views.index),
+path ( 'about' , views. about),
+path ( 'contact', views. contact),
 ]
