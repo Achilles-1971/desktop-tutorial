@@ -2,8 +2,11 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanen
 from django.shortcuts import render
 from django.template.response import TemplateResponse
 from django.template.response import TemplateResponse
+from django.http import *
+from django.shortcuts import render
 def index(request):
-    return render(request, "WEB1/index.html")
+    cat = []
+    return render(request, "WEB1/index.html", context={"cat": cat})
 def about(request):
     return HttpResponse("About")
 def contact(request):
