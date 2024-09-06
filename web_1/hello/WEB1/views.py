@@ -3,13 +3,7 @@ from django.shortcuts import render
 from django.template.response import TemplateResponse
 from django.template.response import TemplateResponse
 def index(request):
-    header = "Персональные данные" # обычная переменная
-    langs = ["Английский", "Немецкий", "Испанский"] # массив
-    user = {"name": "Максим,", "age": 30} # словарь
-    addr = ("Виноградная", 23, 45) # кортеж
-    data = {"header": header, "langs": langs, "user": user, "address":
-    addr}
-    return TemplateResponse(request, "index.html", data)
+    return render(request, "WEB1/index.html")
 def about(request):
     return HttpResponse("About")
 def contact(request):

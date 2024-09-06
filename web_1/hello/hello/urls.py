@@ -17,9 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import path
 from WEB1 import views
+from django.views.generic import TemplateView
 urlpatterns = [
 path('', views.index),
-path('about/', views.about),
-path('contact/', views.contact),
-path('details/', views.details),
+path('about/', TemplateView.as_view(template_name="WEB1/about.html")),
+path('contact/', TemplateView.as_view(template_name="WEB1/contact.html",
+extra_context={"work": "Разработка программных продуктов"})),
 ]
