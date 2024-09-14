@@ -4,7 +4,7 @@ from django.template.response import TemplateResponse
 from django.http import *
 from WEB1.forms import UserForm
 def index(request):
-    userform = UserForm()
+    userform = UserForm(field_order=["age", "name"])
     return render(request, "WEB1/index.html", {"form": userform})
 def about(request):
     return HttpResponse("About")
