@@ -1,17 +1,31 @@
-{% extends "WEB1/base.html" %}
-{% block title %}Index{% endblock title %}
-{% block header %}Главная страница{% endblock header %}
-{% block content%}
-<p>Категории продуктов</p>
-{% for i in cat %}
-<li>{{ i }}</li>
-{% empty %}
-<li>Категории продуктов отсутствуют</li>
-{% endfor %}
-{% with name="ЧАЙХАНА" nom=1 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Форма Django!</title>
+<style>
+.myfield{
+border:2px solid #ccc;
+border-radius:5px;
+height:25px;
+width:200px;
+margin: 10px 10px 10px 0;
+}
+</style>
+</head>
+<body class="container">
+<h2>Стилизация полей</h2>
+<form method="POST">
+{% csrf_token %}
 <div>
-<p>При магазине работает {{ name }}</p>
-<p>Номер № {{ nom }}</p>
+{% for field in form %}
+<div class="row">
+{{field.label_tag}}
+<div class="col-md-10">{{field}}</div>
 </div>
-{% endwith %}
-{% endblock content %}
+{% endfor %}
+</div>
+<input type="submit" value="Оправить" >
+</form>
+</body>
+</html>
