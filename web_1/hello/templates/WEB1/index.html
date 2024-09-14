@@ -6,7 +6,7 @@
 </head>
 <body>
 <h2>Валидация данных</h2>
-<form method="POST">
+<form method="POST" novalidate>
 {% csrf_token %}
 <table>
 {{ form.as_table }}
