@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <title>Форма Django!</title>
 </head>
 <body>
-<h2>Валидация данных</h2>
+<h2>Валидация группы полей</h2>
 <form method="POST" novalidate>
 {% csrf_token %}
-<table>
-{{ form.as_table }}
-</table>
+<div class="form-group">
+{% for field in form %}
+<div>{{field.label_tag}}</div>
+<div>{{field}}</div>
+<div class="error">{{field.errors}}</div>
+{% endfor %}
+</div>
 <input type="submit" value="Оправить" >
 </form>
 </body>
