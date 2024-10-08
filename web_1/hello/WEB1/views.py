@@ -13,3 +13,7 @@ def contact(request):
     return HttpResponseRedirect("/about")
 def details(request):
     return HttpResponsePermanentRedirect("/")
+def product_list(request):
+    products = [
+    {'name': 'Игорь', 'age': 23 },
+    ]
